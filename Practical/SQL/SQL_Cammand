@@ -1,0 +1,48 @@
+mysql> use java;
+Database changed
+mysql> create table person(
+    -> id int primary key not null,
+    -> firstname varchar(20) not null,
+    -> lastname varchar(20) not null,
+    -> address varchar(20) not null,
+    -> city varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into person values (1,'Amit','Varma','Rabale','NaviMumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into person values (2,'Sumit','Gupta','Airoli','NaviMumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values (3,'Ajay','Singh','Ghansoli','NaviMumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values (4,'Mannu','Singh','Govandi','Mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values (5,'Pappu','Yadav','Dombivali','Mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> desc person;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id        | int(11)     | NO   | PRI | NULL    |       |
+| firstname | varchar(20) | NO   |     | NULL    |       |
+| lastname  | varchar(20) | NO   |     | NULL    |       |
+| address   | varchar(20) | NO   |     | NULL    |       |
+| city      | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> Select * from person;
++----+-----------+----------+-----------+------------+
+| id | firstname | lastname | address   | city       |
++----+-----------+----------+-----------+------------+
+|  1 | Amit      | Varma    | Rabale    | NaviMumbai |
+|  2 | Sumit     | Gupta    | Airoli    | NaviMumbai |
+|  3 | Ajay      | Singh    | Ghansoli  | NaviMumbai |
+|  4 | Mannu     | Singh    | Govandi   | Mumbai     |
+|  5 | Pappu     | Yadav    | Dombivali | Mumbai     |
++----+-----------+----------+-----------+------------+
+5 rows in set (0.00 sec)

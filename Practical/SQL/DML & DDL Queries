@@ -1,0 +1,134 @@
+mysql> use java;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_java |
++----------------+
+| person         |
+| student        |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> create table employee(
+    -> emp_id int primary key not null,
+    -> emp_name varchar(30) not null,
+    -> emp_branch varchar(30) not null,
+    -> emp_address varchar(20) not null,
+    -> emp_salary int not null);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| emp_id      | int(11)     | NO   | PRI | NULL    |       |
+| emp_name    | varchar(30) | NO   |     | NULL    |       |
+| emp_branch  | varchar(30) | NO   |     | NULL    |       |
+| emp_address | varchar(20) | NO   |     | NULL    |       |
+| emp_salary  | int(11)     | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into employee values(1,'Raju Shhrivashtav','developer','sanpada',20000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(2,'Hardik Pandya','Tester','Andheri',25000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values(3,'Sumit Gupta','Developer','Kurla',23000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++--------+-------------------+------------+-------------+------------+
+| emp_id | emp_name          | emp_branch | emp_address | emp_salary |
++--------+-------------------+------------+-------------+------------+
+|      1 | Raju Shhrivashtav | developer  | sanpada     |      20000 |
+|      2 | Hardik Pandya     | Tester     | Andheri     |      25000 |
+|      3 | Sumit Gupta       | Developer  | Kurla       |      23000 |
++--------+-------------------+------------+-------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> alter table employee add emp_mobileno int;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| emp_id       | int(11)     | NO   | PRI | NULL    |       |
+| emp_name     | varchar(30) | NO   |     | NULL    |       |
+| emp_branch   | varchar(30) | NO   |     | NULL    |       |
+| emp_address  | varchar(20) | NO   |     | NULL    |       |
+| emp_salary   | int(11)     | NO   |     | NULL    |       |
+| emp_mobileno | int(11)     | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table employee rename to employee_info;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc employee_info;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| emp_id       | int(11)     | NO   | PRI | NULL    |       |
+| emp_name     | varchar(30) | NO   |     | NULL    |       |
+| emp_branch   | varchar(30) | NO   |     | NULL    |       |
+| emp_address  | varchar(20) | NO   |     | NULL    |       |
+| emp_salary   | int(11)     | NO   |     | NULL    |       |
+| emp_mobileno | int(11)     | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> update employee_info set emp_address='Airoli' where emp_id=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_info;
++--------+-------------------+------------+-------------+------------+--------------+
+| emp_id | emp_name          | emp_branch | emp_address | emp_salary | emp_mobileno |
++--------+-------------------+------------+-------------+------------+--------------+
+|      1 | Raju Shhrivashtav | developer  | sanpada     |      20000 |         NULL |
+|      2 | Hardik Pandya     | Tester     | Airoli      |      25000 |         NULL |
+|      3 | Sumit Gupta       | Developer  | Kurla       |      23000 |         NULL |
++--------+-------------------+------------+-------------+------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from employee_info where emp_mobileno=null;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from employee_info;
++--------+-------------------+------------+-------------+------------+--------------+
+| emp_id | emp_name          | emp_branch | emp_address | emp_salary | emp_mobileno |
++--------+-------------------+------------+-------------+------------+--------------+
+|      1 | Raju Shhrivashtav | developer  | sanpada     |      20000 |         NULL |
+|      2 | Hardik Pandya     | Tester     | Airoli      |      25000 |         NULL |
+|      3 | Sumit Gupta       | Developer  | Kurla       |      23000 |         NULL |
++--------+-------------------+------------+-------------+------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from employee_info where emp_id=3;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee_info;
++--------+-------------------+------------+-------------+------------+--------------+
+| emp_id | emp_name          | emp_branch | emp_address | emp_salary | emp_mobileno |
++--------+-------------------+------------+-------------+------------+--------------+
+|      1 | Raju Shhrivashtav | developer  | sanpada     |      20000 |         NULL |
+|      2 | Hardik Pandya     | Tester     | Airoli      |      25000 |         NULL |
++--------+-------------------+------------+-------------+------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> -- select * from employee_info;
+mysql> truncate employee_info;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from employee_info;
+Empty set (0.00 sec)
+
+mysql> drop table employee_info;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from employee_info;
+ERROR 1146 (42S02): Table 'java.employee_info' doesn't exist

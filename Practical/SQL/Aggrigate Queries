@@ -1,0 +1,81 @@
+mysql> use java;
+Database changed
+mysql> create table product(
+    -> pname varchar(20) not null,
+    -> id int not null,
+    -> company varchar(20) not null,
+    -> qty int not null,
+    -> rate int not null,
+    -> cost int not null);
+Query OK, 0 rows affected (0.05 sec)
+mysql> desc product;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| pname   | varchar(20) | NO   |     | NULL    |       |
+| id      | int(11)     | NO   |     | NULL    |       |
+| company | varchar(20) | NO   |     | NULL    |       |
+| qty     | int(11)     | NO   |     | NULL    |       |
+| rate    | int(11)     | NO   |     | NULL    |       |
+| cost    | int(11)     | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> insert into product values('Parle_G',1,'Parle',10,10,100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values('Marry_Gold',2,'Britania',5,10,50);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into product values('Maggi',3,'Nestley',5,12,60);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from product;
++------------+----+----------+-----+------+------+
+| pname      | id | company  | qty | rate | cost |
++------------+----+----------+-----+------+------+
+| Parle_G    |  1 | Parle    |  10 |   10 |  100 |
+| Marry_Gold |  2 | Britania |   5 |   10 |   50 |
+| Maggi      |  3 | Nestley  |   5 |   12 |   60 |
++------------+----+----------+-----+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select count(*) from product;
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select sum(cost) from product;
++-----------+
+| sum(cost) |
++-----------+
+|       210 |
++-----------+
+1 row in set (0.01 sec)
+
+mysql> select avg(rate) from product;
++-----------+
+| avg(rate) |
++-----------+
+|   10.6667 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select max(rate)from product;
++-----------+
+| max(rate) |
++-----------+
+|        12 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select min(qty) from product;
++----------+
+| min(qty) |
++----------+
+|        5 |
++----------+
+1 row in set (0.00 sec)

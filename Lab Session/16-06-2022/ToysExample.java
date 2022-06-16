@@ -1,14 +1,10 @@
-//program to get the input as integer and create a method get Toy(int price) which uses switch case to display the toys with respect to price.
 
 package Corejava;
-
 import java.util.Scanner;
-
-public class ToysExample {
-	
+class ToysExample
+{
 	//creating Multidimentional String Array
 	String[][] toys = new String [5][5];
-
 	// Constructor
     ToysExample()
     {
@@ -28,12 +24,10 @@ public class ToysExample {
     toys[4][1]="Motu Patlu";
 
     }
-
     //static getToy method
     public static String getToy(int price)
     {
-        String toyname;
-        
+        String toyname;      
         // Switch Cases
         switch(price)
         {
@@ -63,15 +57,12 @@ public class ToysExample {
                 return toyname;
         }
     }
-
-    public static void main(String[] args) {
-    	
+    public static void main(String[] args)
+    {
     	System.out.println("Enter the Prize of Toy : ");
     	//Creating Obj of Scanner class
         Scanner sc = new Scanner (System.in);    
         int price = sc.nextInt ();
-        System.out.println(getToy(price));
-
-      
+        System.out.println(getToy(price));    
     }
 }

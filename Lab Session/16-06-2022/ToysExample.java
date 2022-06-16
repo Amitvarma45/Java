@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class ToysExample {
 	
-	//creating Array
+	//creating Multidimentional String Array
 	String[][] toys = new String [5][5];
 
-	//creating Constructor
+	// Constructor
     ToysExample()
     {
     toys [0][0]="1";
@@ -29,14 +29,15 @@ public class ToysExample {
 
     }
 
+    //static getToy method
     public static String getToy(int price)
     {
-    	//creating variable
         String toyname;
         
-        //Using Switch Cases
+        // Switch Cases
         switch(price)
         {
+        	//price of toy in case
             case 149: 
                 toyname = "Ben Ten";
                 return toyname;
@@ -67,12 +68,8 @@ public class ToysExample {
     	
     	System.out.println("Enter the Prize of Toy : ");
     	//Creating Obj of Scanner class
-        Scanner sc = new Scanner (System.in); 
-        
-        //taking Input
+        Scanner sc = new Scanner (System.in);    
         int price = sc.nextInt ();
-
-        //Printing output
         System.out.println(getToy(price));
 
       

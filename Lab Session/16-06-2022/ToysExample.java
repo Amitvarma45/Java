@@ -5,6 +5,8 @@ package Corejava;
 import java.util.Scanner;
 
 public class ToysExample {
+	
+	//creating Array
 	String[][] toys = new String [5][5];
 
 	//creating Constructor

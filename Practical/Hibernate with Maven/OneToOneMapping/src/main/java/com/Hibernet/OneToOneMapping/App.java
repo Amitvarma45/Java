@@ -6,10 +6,6 @@ import com.Hibernate.OneToOneMapping.dao.InstructorDao;
 import com.Hibernate.OneToOneMapping.entity.Instructor;
 import com.Hibernate.OneToOneMapping.entity.InstructorDetail;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )

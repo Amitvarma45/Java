@@ -1,3 +1,5 @@
+
+
 package com.Hibernet.OneToManyMapping;
 
 import java.util.ArrayList;
@@ -14,17 +16,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        Instructor instructor = new Instructor("Ramesh", "Fadatare", "ramesh@javaguides.com"); 
+        Instructor instructor = new Instructor("Amit", "Varma", "amitv@javaguides.com"); 
         InstructorDetail instructorDetail = new InstructorDetail("http://www.youtube.com", "Guitar");
         // associate the objects
         instructorDetail.setInstructor(instructor);
         // associate the objects
         instructor.setInstructorDetail(instructorDetail);
-        
-        Instructor instructor1 = new Instructor("Amit", "Varma", "amitv45@javaguides.com");
-        InstructorDetail instructorDetail1 = new InstructorDetail("http://www.youtube.com", "Piano");
-        instructorDetail1.setInstructor(instructor1);
-        instructor1.setInstructorDetail(instructorDetail1);
+      
         
         List<Course> courses = new ArrayList<>();
         // create some courses
@@ -34,7 +32,7 @@ public class App
         
         
         Course tempCourse2 = new Course("The Pinball Masterclass");
-        tempCourse2.setInstructor(instructor1);
+        tempCourse2.setInstructor(instructor);
         courses.add(tempCourse2);
         
         CourseDao coursedao = new CourseDao();

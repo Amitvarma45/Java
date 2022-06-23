@@ -4,13 +4,13 @@ class SnakeCase
 {
  public String camelToSnake(String str)
  {
-	 //variable
-	 String stt="";
+//variable
+String stt="";
 
 //Assighnment Operator
 stt+=Character.toLowerCase(str.charAt(0));
 
-//for loop
+//Conditional loop
 for(int i=1;i<str.length();i++)
 {
  char ch=str.charAt(i);

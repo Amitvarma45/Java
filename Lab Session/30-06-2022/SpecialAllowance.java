@@ -1,9 +1,13 @@
 package LabSession;
 
+import java.util.Scanner;
+
 public class SpecialAllowance {
 	 public static void main(String[] args) {
+		 	//object of scanner class
+		 	Scanner sc = new Scanner(System.in);
 	        //object of Manager class
-	        Manager m = new Manager(126534, "Peter", "Chennai India", 237844, 65000.0);
+	        ManagerOne m = new ManagerOne(Integer.parseInt(sc.nextLine()), sc.nextLine(), sc.nextLine(),sc.nextLong(),sc.nextDouble());
 	        double salary = m.calculateSalary(); 
 	        //printing output
 	        System.out.println("Manager's Salary : "+salary);
